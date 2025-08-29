@@ -2,11 +2,11 @@ import { Link } from "expo-router";
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index () {
+export default function Find () {
     return (
         <SafeAreaProvider>
             <SafeAreaView>
-                <Text>Welcome screen</Text>
+                <Text>Find</Text>
                 <Text>Welcome to copreneur</Text>
                 <Link 
                 href="/signup"

@@ -6,7 +6,7 @@ export default function Index () {
     return (
         <SafeAreaProvider>
             <SafeAreaView>
-                <Text>Welcome screen</Text>
+                <Text>Welcome to default screen</Text>
                 <Text>Welcome to copreneur</Text>
                 <Link 
                 href="/signup"
