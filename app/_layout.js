@@ -1,26 +1,30 @@
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
+  const session = false;
+  
   return (
     <Stack>
+      {session === true ?
       <Stack.Screen
       name="(tabs)"
       options={{
         title: "Home",
         headerShown: false
       }}/>
+      :
+      <Stack.Screen
+      name="signup"
+      options={{
+        title: "Create a new account",
+        headerShown: false,
+      }}/>
+      }
       
       <Stack.Screen
       name="index"
       options={{
         title: "Welcome",
-        headerShown: false,
-      }}/>
-      
-      <Stack.Screen
-      name="signup"
-      options={{
-        title: "Create a new account",
         headerShown: false,
       }}/>
       
