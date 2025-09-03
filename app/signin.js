@@ -2,7 +2,7 @@ import { Link } from "expo-router";
 import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { colors } from "../theme/colors";
 
-export default function Signup () {
+export default function Signin () {
     return (
         <View style={styles.wrapper}>
             {/* header group */}
@@ -13,7 +13,7 @@ export default function Signup () {
 
             {/* body group */}
             <View style={styles.body}>
-                <Text style={styles.bodyText}>Create account</Text>
+                <Text style={styles.bodyText}>Sign in to your account</Text>
 
                 {/* create account with google */}
                 <TouchableOpacity style={styles.signInBtn}>
@@ -47,8 +47,8 @@ export default function Signup () {
 
                 {/* already have an account? */}
                 <View style={styles.already}>
-                    <Text style={styles.alreadyText}>Already have an account?</Text>
-                    <Link href="/signin" style={styles.alreadyLink}>Go to sign in</Link>
+                    <Text style={styles.alreadyText}>Don't have an account?</Text>
+                    <Link href="/signup" style={styles.alreadyLink}>Go to sign up</Link>
                 </View>
             </View>
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: colors.brown200,
+    backgroundColor: colors.brown100,
     paddingTop: StatusBar.currentHeight,
     paddingBottom: 40
    }, 
@@ -156,4 +156,3 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6
    }
 });
-
