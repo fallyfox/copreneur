@@ -1,10 +1,16 @@
 import { Link } from "expo-router";
+import { useState } from "react";
 import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { colors } from "../theme/colors";
 
 export default function Signup () {
+    const [email,setEmail] = useState(""); 
+    const [password,setPassword] = useState(""); 
+    const [passwordConfirmation,setPasswordConfirmation] = useState(""); 
+
     return (
         <View style={styles.wrapper}>
+            {/* <StatusBar translucent={false} barStyle="light-content"/> */}
             {/* header group */}
             <View style={styles.header}>
                 <Text style={styles.brandName}>Copreneur</Text>
@@ -38,11 +44,31 @@ export default function Signup () {
                     <TextInput
                     keyboardType="email-address"
                     style={styles.input}
-                    placeholder="eg. johndoe@example.com"/>
+                    placeholder="eg. johndoe@example.com"
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}/>
+                    
                     <TextInput
+                    secureTextEntry={true}
                     keyboardType="default"
                     style={styles.input}
-                    placeholder="create password"/>
+                    placeholder="create password"
+                    value={password}
+                    onChangeText={(text) => setPassword(text)}/>
+                    
+                    {password.length >= 8 &&
+                    <TextInput
+                    secureTextEntry={true}
+                    keyboardType="default"
+                    style={styles.input}
+                    placeholder="confirm password"
+                    value={passwordConfirmation}
+                    onChangeText={(text) => setPasswordConfirmation(text)}/>}
+
+                    {password.length >= 8 && password == passwordConfirmation &&
+                    <TouchableOpacity style={styles.signInBtn}>
+                        <Text style={styles.signInText}>Create Account</Text>
+                    </TouchableOpacity>}
                 </View>
 
                 {/* already have an account? */}

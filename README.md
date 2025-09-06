@@ -1,20 +1,44 @@
-# Welcome to your Expo app 👋
+- Installing Tailwind:
+npm install nativewind tailwindcss 
+After success of above, run: npx tailwindcss init
+Continue with step 2 and more: https://www.nativewind.dev/docs/getting-started/installation
+Add "./app/**/*.{js,jsx,ts,tsx}" on content:[]
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Step 4: run: npx expo customize metro.config.js
 
-## Get started
+After Step 5: create a file on the root directory: nativewind-env.d.ts and add:
+/// <reference types="nativewind/types"/>
+This enables Typescript to understand tailwind classes, preventing constant error messages.
 
-1. Install dependencies
+Open metro.config.js files and correctly update "./global.css" to "./app/globals.css"
 
-   ```bash
-   npm install
-   ```
+Recommended: after lots of setup restart development server with --clear flag
+npx expo start --clear
 
-2. Start the app
+### CV screen
+full names
+React Native Developer - Major (main field, eg React Native)
+Years    Proficiency
+4        Pro
 
-   ```bash
-   npx expo start
-   ```
+Skills and years of experince
+JavaScript  5
+Git         7
+GitHub      4
+Others
+
+Projects
+title
+About the project. Some more info
+Link to project
+
+Contributions
+title
+description
+How you contributed
+Link to project
+
+
 
 In the output, you'll find options to open the app in a
 
