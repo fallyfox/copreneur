@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import "./global.css";
 
 export default function RootLayout() {
-  const session = true;
+  const session = false;
   
   return (
     <Stack>
