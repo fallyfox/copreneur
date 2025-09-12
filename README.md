@@ -72,3 +72,9 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+### AUTHENTICATION
+1. Create authentication with Firebase
+2. Enable persistence session
+3. Make session available throughout app (React Hook)
+4. Store new users details on database
