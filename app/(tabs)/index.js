@@ -1,8 +1,13 @@
 import { Link } from "expo-router";
+import { useContext } from "react";
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { AuthContext } from "./../../config/auth-context.config";
 
 export default function Index () {
+    const { user } = useContext(AuthContext);
+    console.log(">>>FROM HOME <<<<",user)
+    
     return (
         <SafeAreaProvider>
             <SafeAreaView>

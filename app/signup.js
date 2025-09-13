@@ -1,14 +1,16 @@
 import { Link, useRouter } from "expo-router";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { ActivityIndicator, Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { auth } from "../config/firebase.secret";
+import { auth, db } from "../config/firebase.secret";
 import { colors } from "../theme/colors";
 import { signupValidation } from "../utils/signup-validation-schema";
 
 export default function Signup() {
     const [isLoading,setIsLoading] = useState(false);
+    const authenticated = getAuth();
 
     const router = useRouter();
 
@@ -20,8 +22,21 @@ export default function Signup() {
             try {
                 // create a new user account
                 const user = await createUserWithEmailAndPassword(auth,values.email,values.password);
-                console.log(user);
                 setIsLoading(false); // stops ActivityIndicator
+
+                // update user's profile
+                updateProfile(authenticated.currentUser,{
+                    displayName: `${values.firstName} ${values.lastName}`,
+                });
+
+                // store user's data on database
+                setDoc(doc(db,"users",authenticated.currentUser.uid),{
+                    email: values.email,
+                    firstName: values.firstName,
+                    lastName: values.lastName,
+                    phoneNumber: values.phoneNumber,
+                    createdAt: new Date().getTime()
+                });
 
                 //redirect to home
                 router.replace("/(tabs)");
@@ -147,7 +162,6 @@ export default function Signup() {
                             <Text style={styles.errormsg}>{errors.password}</Text>}
                         </View>
 
-                        {!errors.password && touched.password &&
                         <View>
                             <TextInput
                             secureTextEntry={true}
@@ -159,7 +173,7 @@ export default function Signup() {
                             />
                             {errors.passwordConfirmation && touched.passwordConfirmation && 
                             <Text style={styles.errormsg}>{errors.passwordConfirmation}</Text>}
-                        </View>}
+                        </View>
 
                         {!errors.passwordConfirmation && !errors.email && touched.passwordConfirmation &&
                         <TouchableOpacity onPress={handleSubmit} style={styles.signupBtn}>
