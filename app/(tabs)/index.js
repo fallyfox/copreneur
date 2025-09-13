@@ -6,7 +6,6 @@ import { AuthContext } from "./../../config/auth-context.config";
 
 export default function Index () {
     const { user } = useContext(AuthContext);
-    console.log(">>>FROM HOME <<<<",user)
     
     return (
         <SafeAreaProvider>
