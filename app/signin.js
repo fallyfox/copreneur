@@ -120,14 +120,14 @@ export default function Signin() {
                     {/* already have an account? */}
                     <View style={styles.already}>
                         <Text style={styles.alreadyText}>Don't have an account?</Text>
-                        <Link href="/signup" style={styles.alreadyLink}>Go to sign in</Link>
+                        <Link href="/signup" style={styles.alreadyLink}>Go to sign up</Link>
                     </View>
                 </View>
 
                 {/* bottom group */}
                 <View style={styles.footer}>
                     <Link href="/about" style={styles.footerLink}>About Copreneur</Link>
-                    <Link href="/about" style={styles.footerLink}>Home</Link>
+                    <Link href="/" style={styles.footerLink}>Home</Link>
                 </View>
             </ScrollView>
         </KeyboardAvoidingView>
