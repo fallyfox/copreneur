@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { ActivityIndicator, Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { auth } from "../secrets/firebase";
+import { auth } from "../settings/firebase";
 import { colors } from "../theme/colors";
 import { signinValidation } from "../utils/signin-validation-schema";
 

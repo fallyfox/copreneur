@@ -8,7 +8,7 @@ export default function RootLayout() {
   
   return (
     <AuthProvider>
-      <Stack>
+      <Stack screenOptions={{ headerShown: false}}>
         {user !== undefined ?
         <Stack.Screen
         name="(tabs)"

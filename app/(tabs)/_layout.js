@@ -1,6 +1,7 @@
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
 import Foundation from '@expo/vector-icons/Foundation';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { Tabs } from "expo-router";
 import { colors } from "../../theme/colors";
 
@@ -20,7 +21,7 @@ export default function Layout () {
             options={{
                 title: "Find",
                 headerShown: false,
-                tabBarIcon: ({ color }) => (<AntDesign name="find" size={24} color={color} />)
+                tabBarIcon: ({ color }) => (<MaterialCommunityIcons name="file-find" size={24} color={color} />)
             }}/>
 
             <Tabs.Screen

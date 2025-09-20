@@ -4,7 +4,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { ActivityIndicator, Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { auth, db } from "../secrets/firebase";
+import { auth, db } from "../settings/firebase";
 import { colors } from "../theme/colors";
 import { signupValidation } from "../utils/signup-validation-schema";
 
@@ -175,12 +175,11 @@ export default function Signup() {
                             <Text style={styles.errormsg}>{errors.passwordConfirmation}</Text>}
                         </View>
 
-                        {!errors.passwordConfirmation && !errors.email && touched.passwordConfirmation &&
                         <TouchableOpacity onPress={handleSubmit} style={styles.signupBtn}>
                             {isLoading ?
                             <ActivityIndicator size="large" color="white"/> :
                             <Text style={styles.signInText}>Create Account</Text>}
-                        </TouchableOpacity>}
+                        </TouchableOpacity>
                     </View>
 
                     {/* already have an account? */}
