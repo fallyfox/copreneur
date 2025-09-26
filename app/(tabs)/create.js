@@ -68,7 +68,7 @@ export default function Create() {
 
                 {/* body group  */}
                 <View style={styles.body}>
-                    <Text className="font-bold text-lg">Hello, {user.displayName}</Text>
+                    <Text className="font-bold text-lg">Hello, {user?.displayName}</Text>
                     <Text style={styles.bodyText}>What do you want to share?</Text>
 
                     {/* create account with email and password */}
