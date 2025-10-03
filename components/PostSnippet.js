@@ -3,12 +3,13 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link } from "expo-router";
 import { Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors } from "../theme/colors";
+import { TimePast } from "../utils/time-past";
 
 export default function PostSnippet ({ postData }) {
     return (
         <View>
             {/* author info and time */}
-            <View className="flex flex-row justify-between">
+            <View className="flex flex-row justify-between items-center">
                 {/* left: author bio */}
                 <Link href="/user-profile">
                    <View className="flex flex-row items-center gap-2">
@@ -20,6 +21,7 @@ export default function PostSnippet ({ postData }) {
                 </Link>
 
                 {/* right: time past since post was made */}
+                <Text className="text-neutral-700">{TimePast(postData.data.createdAt)}</Text>
             </View>
 
             <Text className="font-semibold text-md text-neutral-700">{postData.data.text}</Text>
