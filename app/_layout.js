@@ -45,6 +45,13 @@ export default function RootLayout() {
           title: "Create a new account",
           headerShown: false,
         }}/>
+        
+        <Stack.Screen
+        name="user-profile"
+        options={{
+          title: "User profile",
+          headerShown: false,
+        }}/>
       </Stack>
     </AuthProvider>
   )
