@@ -27,7 +27,7 @@ export default function Index () {
     return (
         <View className="px-4 pb-4 pt-8">
             <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent={true}/>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.brandText}>Copreneur</Text>
 
                 {/* for developers */}
